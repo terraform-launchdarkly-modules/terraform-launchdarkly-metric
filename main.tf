@@ -17,5 +17,5 @@ resource "launchdarkly_metric" "this" {
   }
 
   # Only add selector if it's defined and kind == "click"
-#   selector = each.value.kind == "click" && contains(keys(each.value), "selector") ? each.value.selector : null
+  selector = each.value.kind == "click" && contains(keys(each.value), "selector") ? each.value.selector : null
 }
